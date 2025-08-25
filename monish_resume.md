@@ -1,7 +1,7 @@
 # Monishwaran .C
 **Software Engineer**
 
-📧 monarch.aws@gmail.com | 📱 +91 8798765671 | 📍 Chennai, Tamil Nadu, India | 🏆 AWS Cloud Practitioner Certified
+📧 monarch.aws@gmail.com | 📱 +91 7868049170 | 📍 Chennai, Tamil Nadu, India | 🏆 AWS Cloud Practitioner Certified
 
 ---
 
@@ -104,7 +104,8 @@ Percentage: 97%
 - **Python (Advanced)** - FastAPI, Django, Flask, SQLAlchemy, Pandas, Selenium
 - **Dart/Flutter (Intermediate)** - Mobile app development, API integration
 - **JavaScript (Intermediate)** - Frontend development, API integration
-- **SQL (Advanced)** - PostgreSQL, MongoDB queries and optimization
+- **SQL (Advanced)** - PostgreSQL
+- **NoSQL (Advanced)** - MongoDB queries and optimization
 
 ### Cloud & DevOps
 - **Amazon Web Services (AWS)** - Lambda, EC2, S3, API Gateway, ECS Fargate, Cognito, SES, SNS, Polly, Transcribe
@@ -115,13 +116,13 @@ Percentage: 97%
 ### Frameworks & Technologies
 - **Backend Development** - FastAPI, RESTful APIs, Microservices Architecture
 - **ERP Systems** - Odoo (Community & Enterprise), Custom module development
-- **AI/ML Integration** - OpenAI GPT-4, Whisper, AWS AI services
+- **AI/ML Integration** - OpenAI GPT-4, Whisper, Deepseek-chat
 - **Mobile Development** - Flutter, Firebase integration
 - **Payment Integration** - Razorpay, Stripe payment gateways
 
 ### Integration & APIs
 - **Third-party Integrations** - Zoho Books, Agora SDK, Alison Platform, Azure AD
-- **Authentication** - AWS Cognito, SSO implementation, OAuth
+- **Authentication** - AWS Cognito, SSO implementation, OAuth, AuthO
 - **Real-time Communication** - WebRTC, voice/video calling, cloud recording
 
 ### Business & Domain Knowledge
