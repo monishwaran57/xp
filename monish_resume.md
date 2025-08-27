@@ -1,7 +1,7 @@
 # Monishwaran .C
 **Software Engineer**
 
-📧 monarch.aws@gmail.com | 📱 +91 7868049170 | 📍 Chennai, Tamil Nadu, India | 🏆 AWS Cloud Practitioner Certified
+📧 monarch.aws@gmail.com | 📱 +91 7868049170 | 📍 Chennai, Tamil Nadu, India | 🔗 [LinkedIn](https://www.linkedin.com/in/mongineer/) | 🏆 AWS Cloud Practitioner Certified
 
 ---
 
