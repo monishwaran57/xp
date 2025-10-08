@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monishwaran C - Resume</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            color: #2d3748;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 600;
+        }
+
+        .experience-item {
+            margin-bottom: 25px;
+        }
+
+        .company-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .company-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .project {
+            margin-bottom: 20px;
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .project-title {
+            color: #2d3748;
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .achievements {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievements li {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .achievements li:before {
+            content: "▸";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 5px;
+        }
+
+        .certification {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .cert-title {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .download-section {
+            text-align: center;
+            padding: 30px;
+            background: #f7fafc;
+            display: flex; /* Added to space out buttons */
+            justify-content: center; /* Added to space out buttons */
+            gap: 20px; /* Space between buttons */
+            flex-wrap: wrap; /* Added for responsiveness */
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-btn.pdf-btn { /* Style for PDF button if needed */
+            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%); /* Red gradient for PDF */
+            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4);
+        }
+        
+        .download-btn.pdf-btn:hover {
+            box-shadow: 0 6px 20px rgba(229, 62, 62, 0.6);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .download-section {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .download-btn {
+                width: 100%; /* Full width buttons on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="resume-content"> <div class="header">
+            <h1>MONISHWARAN C</h1>
+            <div class="contact-info">
+                <div class="contact-item">📧 monishwaran41046@gmail.com</div>
+                <div class="contact-item">📱 +91 7868049170</div>
+                <div class="contact-item">📍 Chennai, Tamil Nadu</div>
+                <div class="contact-item">💼 <a href="https://linkedin.com/in/mongineer" style="color: white; text-decoration: none;">linkedin.com/in/mongineer</a></div>
+                <div class="contact-item">🔗 <a href="https://github.com/monishwaran57" style="color: white; text-decoration: none;">github.com/monishwaran57</a></div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="company-header">
+                        <div class="company-name">Bapon IT Services - Software Engineer</div>
+                        <div class="duration">July 2025 - Present</div>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">SkillfulSense - Web Assessment Platform</div>
+                        <div class="project-description">
+                            Led the development of a comprehensive web assessment platform (live at skillfulsense.com) offering topic-based assessments, AI-powered interviews, and personalized learning pathways with integrated certification.
+                        </div>
+                        <ul class="achievements">
+                            <li>Architected and developed 40+ RESTful API endpoints using FastAPI with decoupled microservices architecture</li>
+                            <li>Integrated dual payment gateways (Razorpay for India, Stripe for global markets) for seamless transactions</li>
+                            <li>Implemented AI-powered assessment generation using DeepSeek-Chat for MCQ and coding challenges</li>
+                            <li>Built real-time AI interview system with Agora meeting channels, GPT-4o, and AWS Polly for voice synthesis</li>
+                            <li>Developed intelligent voice assistant using GPT-4o-mini-realtime-preview accepting audio tokens directly for faster responses</li>
+                            <li>Created post-session helpful links feature powered by GPT-4.1 with web search capabilities</li>
+                            <li>Deployed backend across 6 Lambda functions following decoupled architecture; voice agent on EC2 with auto-scaling</li>
+                            <li>Integrated Google Custom Search API and YouTube Data API for curated free course recommendations</li>
+                            <li>Calculated infrastructure costs and determined minimum user threshold for cost recovery</li>
+                            <li>Managed AWS Cognito for user authentication and SES for email notifications</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python FastAPI</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">AWS Lambda</span>
+                            <span class="tech-tag">EC2</span>
+                            <span class="tech-tag">GPT-4o</span>
+                            <span class="tech-tag">Agora</span>
+                            <span class="tech-tag">Razorpay</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-header">
+                        <div class="company-name">Bapon IT Services - Backend Developer Intern</div>
+                        <div class="duration">December 2024 - June 2025</div>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">Hyr-Sense - AI Interview Platform</div>
+                        <div class="project-description">
+                            Enhanced existing AI-powered interview platform with cloud recording capabilities and real-time processing features.
+                        </div>
+                        <ul class="achievements">
+                            <li>Implemented cloud recording functionality using Agora's API, storing interview sessions on AWS S3</li>
+                            <li>Developed automated recording triggers integrated with start/end interview endpoints</li>
+                            <li>Configured secure AWS credentials management for cloud storage operations</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python FastAPI</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Agora SDK</span>
+                            <span class="tech-tag">AWS S3</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">SenseScript - Meeting Transcription & Summarization</div>
+                        <div class="project-description">
+                            Built serverless backend for meeting audio processing application enabling transcription and intelligent summarization.
+                        </div>
+                        <ul class="achievements">
+                            <li>Designed complete RESTful API architecture using FastAPI</li>
+                            <li>Integrated AWS Transcribe for accurate audio-to-text conversion</li>
+                            <li>Implemented GPT-4o for generating concise meeting summaries</li>
+                            <li>Deployed serverless backend on AWS Lambda with API Gateway</li>
+                            <li>Configured AWS Cognito for secure user pool management</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">AWS Lambda</span>
+                            <span class="tech-tag">AWS Transcribe</span>
+                            <span class="tech-tag">GPT-4o</span>
+                            <span class="tech-tag">Cognito</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">HRSuite - Timesheet Management Portal</div>
+                        <div class="project-description">
+                            Developed comprehensive HR management system replacing Zoho People with custom-built solution for organizational needs.
+                        </div>
+                        <ul class="achievements">
+                            <li>Engineered 90+ API endpoints handling timesheets, leave management, attendance, documents, projects, and jobs</li>
+                            <li>Implemented role-based access control (RBAC) for secure multi-level permissions</li>
+                            <li>Utilized PostgreSQL with SQLAlchemy ORM for optimized database operations</li>
+                            <li>Configured AWS Cognito SSO integration with Azure Directory for seamless authentication</li>
+                            <li>Set up AWS SES for automated email notifications and alerts</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">SQLAlchemy</span>
+                            <span class="tech-tag">AWS SES</span>
+                            <span class="tech-tag">Cognito</span>
+                            <span class="tech-tag">Azure AD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Personal Projects</h2>
+                
+                <div class="project">
+                    <div class="project-title">Pipe Diameter Optimizer (opti.mklabs.work)</div>
+                    <div class="project-description">
+                        Developed web application automating water distribution pipeline diameter optimization, reducing manual iteration time by 80%.
+                    </div>
+                    <ul class="achievements">
+                        <li>Built optimization algorithm considering velocity constraints, residual head requirements, and endpoint specifications</li>
+                        <li>Created FastAPI endpoints for sample template download and optimization processing</li>
+                        <li>Implemented Excel file manipulation using Pandas for input/output handling</li>
+                        <li>Deployed backend on AWS Lambda with S3-hosted frontend</li>
+                        <li>Configured Route 53 for custom domain DNS management</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">AWS Lambda</span>
+                        <span class="tech-tag">S3</span>
+                        <span class="tech-tag">Route 53</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certification">
+                    <div class="cert-title">AWS Certified Cloud Practitioner</div>
+                    <div>Score: 96.2%</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">SQLAlchemy</span>
+                    <span class="tech-tag">AWS (Lambda, EC2, S3, SES, Cognito, Transcribe, Polly)</span>
+                    <span class="tech-tag">GPT-4o</span>
+                    <span class="tech-tag">DeepSeek</span>
+                    <span class="tech-tag">OpenAI Whisper</span>
+                    <span class="tech-tag">Agora SDK</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Razorpay</span>
+                    <span class="tech-tag">Stripe</span>
+                    <span class="tech-tag">Git/GitHub</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">RESTful APIs</span>
+                    <span class="tech-tag">Microservices</span>
+                    <span class="tech-tag">Serverless Architecture</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="download-section">
+        <button class="download-btn" id="downloadDocxBtn">📥 Download Resume as DOCX</button>
+        <button class="download-btn pdf-btn" id="downloadPdfBtn">📄 Download Resume as PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.1.0/docx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-Z5TmiM4E4fjy+SgStNaBwAH/hU/pmfS38A58n9M8dEAgxSgD96+JbL+l0Ym5/9+v6n5kS3+v5t1tG1Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // Use window.onload to ensure all scripts and the DOM are ready
+        window.onload = function() {
+            // Function to generate bullet points for DOCX
+            function createBulletPoints(items) {
+                const { Paragraph } = docx;
+                return items.map(item => 
+                    new Paragraph({
+                        text: item,
+                        bullet: {
+                            level: 0
+                        },
+                        spacing: { after: 100 },
+                    })
+                );
+            }
+
+            // DOCX Generation Function (Existing logic)
+            async function generateDocx() {
+                const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, BorderStyle, UnderlineType } = docx;
+
+                const doc = new Document({
+                    sections: [{
+                        properties: {},
+                        children: [
+                            // Header
+                            new Paragraph({
+                                alignment: AlignmentType.CENTER,
+                                children: [
+                                    new TextRun({
+                                        text: "MONISHWARAN C",
+                                        bold: true,
+                                        size: 32,
+                                        color: "2D3748",
+                                    }),
+                                ],
+                                spacing: { after: 200 },
+                            }),
+                            new Paragraph({
+                                alignment: AlignmentType.CENTER,
+                                children: [
+                                    new TextRun({
+                                        text: "📧 monishwaran41046@gmail.com  |  📱 +91 7868049170  |  📍 Chennai, Tamil Nadu",
+                                        size: 20,
+                                        color: "4A5568",
+                                    }),
+                                ],
+                                spacing: { after: 100 },
+                            }),
+                            new Paragraph({
+                                alignment: AlignmentType.CENTER,
+                                children: [
+                                    new TextRun({
+                                        text: "💼 linkedin.com/in/mongineer  |  🔗 github.com/monishwaran57",
+                                        size: 20,
+                                        color: "4A5568",
+                                    }),
+                                ],
+                                spacing: { after: 400 },
+                            }),
+
+                            // Professional Experience Section
+                            new Paragraph({
+                                text: "PROFESSIONAL EXPERIENCE",
+                                heading: HeadingLevel.HEADING_1,
+                                spacing: { before: 200, after: 200 },
+                                border: {
+                                    bottom: {
+                                        color: "667EEA",
+                                        space: 1,
+                                        style: BorderStyle.SINGLE,
+                                        size: 15,
+                                    },
+                                },
+                            }),
+
+                            // Software Engineer Role
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Bapon IT Services - Software Engineer",
+                                        bold: true,
+                                        size: 24,
+                                        color: "667EEA",
+                                    }),
+                                ],
+                                spacing: { before: 200, after: 100 },
+                            }),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "July 2025 - Present",
+                                        italics: true,
+                                        size: 20,
+                                        color: "718096",
+                                    }),
+                                ],
+                                spacing: { after: 200 },
+                            }),
+
+                            // SkillfulSense Project
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "SkillfulSense - Web Assessment Platform",
+                                        bold: true,
+                                        size: 22,
+                                        color: "2D3748",
+                                    }),
+                                ],
+                                spacing: { after: 100 },
+                            }),
+                            new Paragraph({
+                                text: "Led the development of a comprehensive web assessment platform (live at skillfulsense.com) offering topic-based assessments, AI-powered interviews, and personalized learning pathways with integrated certification.",
+                                spacing: { after: 150 },
+                            }),
+                            ...createBulletPoints([
+                                "Architected and developed 40+ RESTful API endpoints using FastAPI with decoupled microservices architecture",
+                                "Integrated dual payment gateways (Razorpay for India, Stripe for global markets) for seamless transactions",
+                                "Implemented AI-powered assessment generation using DeepSeek-Chat for MCQ and coding challenges",
+                                "Built real-time AI interview system with Agora meeting channels, GPT-4o, and AWS Polly for voice synthesis",
+                                "Developed intelligent voice assistant using GPT-4o-mini-realtime-preview accepting audio tokens directly for faster responses",
+                                "Created post-session helpful links feature powered by GPT-4.1 with web search capabilities",
+                                "Deployed backend across 6 Lambda functions following decoupled architecture; voice agent on EC2 with auto-scaling",
+                                "Integrated Google Custom Search API and YouTube Data API for curated free course recommendations",
+                                "Calculated infrastructure costs and determined minimum user threshold for cost recovery",
+                                "Managed AWS Cognito for user authentication and SES for email notifications",
+                            ]),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Tech Stack: ",
+                                        bold: true,
+                                    }),
+                                    new TextRun({
+                                        text: "Python FastAPI, MongoDB, AWS Lambda, EC2, GPT-4o, Agora, Razorpay, Stripe",
+                                    }),
+                                ],
+                                spacing: { after: 300 },
+                            }),
+
+                            // Backend Developer Intern Role
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Bapon IT Services - Backend Developer Intern",
+                                        bold: true,
+                                        size: 24,
+                                        color: "667EEA",
+                                    }),
+                                ],
+                                spacing: { before: 200, after: 100 },
+                            }),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "December 2024 - June 2025",
+                                        italics: true,
+                                        size: 20,
+                                        color: "718096",
+                                    }),
+                                ],
+                                spacing: { after: 200 },
+                            }),
+
+                            // Hyr-Sense Project
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Hyr-Sense - AI Interview Platform",
+                                        bold: true,
+                                        size: 22,
+                                        color: "2D3748",
+                                    }),
+                                ],
+                                spacing: { after: 100 },
+                            }),
+                            new Paragraph({
+                                text: "Enhanced existing AI-powered interview platform with cloud recording capabilities and real-time processing features.",
+                                spacing: { after: 150 },
+                            }),
+                            ...createBulletPoints([
+                                "Implemented cloud recording functionality using Agora's API, storing interview sessions on AWS S3",
+                                "Developed automated recording triggers integrated with start/end interview endpoints",
+                                "Configured secure AWS credentials management for cloud storage operations",
+                            ]),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Tech Stack: ",
+                                        bold: true,
+                                    }),
+                                    new TextRun({
+                                        text: "Python FastAPI, MongoDB, Agora SDK, AWS S3, React",
+                                    }),
+                                ],
+                                spacing: { after: 300 },
+                            }),
+
+                            // SenseScript Project
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "SenseScript - Meeting Transcription & Summarization",
+                                        bold: true,
+                                        size: 22,
+                                        color: "2D3748",
+                                    }),
+                                ],
+                                spacing: { after: 100 },
+                            }),
+                            new Paragraph({
+                                text: "Built serverless backend for meeting audio processing application enabling transcription and intelligent summarization.",
+                                spacing: { after: 150 },
+                            }),
+                            ...createBulletPoints([
+                                "Designed complete RESTful API architecture using FastAPI",
+                                "Integrated AWS Transcribe for accurate audio-to-text conversion",
+                                "Implemented GPT-4o for generating concise meeting summaries",
+                                "Deployed serverless backend on AWS Lambda with API Gateway",
+                                "Configured AWS Cognito for secure user pool management",
+                            ]),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Tech Stack: ",
+                                        bold: true,
+                                    }),
+                                    new TextRun({
+                                        text: "FastAPI, AWS Lambda, AWS Transcribe, GPT-4o, Cognito, MongoDB",
+                                    }),
+                                ],
+                                spacing: { after: 300 },
+                            }),
+
+                            // HRSuite Project
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "HRSuite - Timesheet Management Portal",
+                                        bold: true,
+                                        size: 22,
+                                        color: "2D3748",
+                                    }),
+                                ],
+                                spacing: { after: 100 },
+                            }),
+                            new Paragraph({
+                                text: "Developed comprehensive HR management system replacing Zoho People with custom-built solution for organizational needs.",
+                                spacing: { after: 150 },
+                            }),
+                            ...createBulletPoints([
+                                "Engineered 90+ API endpoints handling timesheets, leave management, attendance, documents, projects, and jobs",
+                                "Implemented role-based access control (RBAC) for secure multi-level permissions",
+                                "Utilized PostgreSQL with SQLAlchemy ORM for optimized database operations",
+                                "Configured AWS Cognito SSO integration with Azure Directory for seamless authentication",
+                                "Set up AWS SES for automated email notifications and alerts",
+                            ]),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Tech Stack: ",
+                                        bold: true,
+                                    }),
+                                    new TextRun({
+                                        text: "FastAPI, PostgreSQL, SQLAlchemy, AWS SES, Cognito, Azure AD",
+                                    }),
+                                ],
+                                spacing: { after: 300 },
+                            }),
+
+                            // Personal Projects Section
+                            new Paragraph({
+                                text: "PERSONAL PROJECTS",
+                                heading: HeadingLevel.HEADING_1,
+                                spacing: { before: 400, after: 200 },
+                                border: {
+                                    bottom: {
+                                        color: "667EEA",
+                                        space: 1,
+                                        style: BorderStyle.SINGLE,
+                                        size: 15,
+                                    },
+                                },
+                            }),
+
+                            // Pipe Diameter Optimizer
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Pipe Diameter Optimizer (opti.mklabs.work)",
+                                        bold: true,
+                                        size: 22,
+                                        color: "2D3748",
+                                    }),
+                                ],
+                                spacing: { after: 100 },
+                            }),
+                            new Paragraph({
+                                text: "Developed web application automating water distribution pipeline diameter optimization, reducing manual iteration time by 80%.",
+                                spacing: { after: 150 },
+                            }),
+                            ...createBulletPoints([
+                                "Built optimization algorithm considering velocity constraints, residual head requirements, and endpoint specifications",
+                                "Created FastAPI endpoints for sample template download and optimization processing",
+                                "Implemented Excel file manipulation using Pandas for input/output handling",
+                                "Deployed backend on AWS Lambda with S3-hosted frontend",
+                                "Configured Route 53 for custom domain DNS management",
+                            ]),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Tech Stack: ",
+                                        bold: true,
+                                    }),
+                                    new TextRun({
+                                        text: "Python, Pandas, FastAPI, AWS Lambda, S3, Route 53",
+                                    }),
+                                ],
+                                spacing: { after: 300 },
+                            }),
+
+                            // Certifications Section
+                            new Paragraph({
+                                text: "CERTIFICATIONS",
+                                heading: HeadingLevel.HEADING_1,
+                                spacing: { before: 400, after: 200 },
+                                border: {
+                                    bottom: {
+                                        color: "667EEA",
+                                        space: 1,
+                                        style: BorderStyle.SINGLE,
+                                        size: 15,
+                                    },
+                                },
+                            }),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "AWS Certified Cloud Practitioner",
+                                        bold: true,
+                                        size: 22,
+                                    }),
+                                    new TextRun({
+                                        text: " - Score: 96.2%",
+                                        size: 22,
+                                    }),
+                                ],
+                                spacing: { after: 300 },
+                            }),
+
+                            // Technical Skills Section
+                            new Paragraph({
+                                text: "TECHNICAL SKILLS",
+                                heading: HeadingLevel.HEADING_1,
+                                spacing: { before: 400, after: 200 },
+                                border: {
+                                    bottom: {
+                                        color: "667EEA",
+                                        space: 1,
+                                        style: BorderStyle.SINGLE,
+                                        size: 15,
+                                    },
+                                },
+                            }),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Languages & Frameworks: ",
+                                        bold: true,
+                                    }),
+                                    new TextRun({
+                                        text: "Python, FastAPI, React",
+                                    }),
+                                ],
+                                spacing: { after: 150 },
+                            }),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Databases: ",
+                                        bold: true,
+                                    }),
+                                    new TextRun({
+                                        text: "MongoDB, PostgreSQL, SQLAlchemy ORM",
+                                    }),
+                                ],
+                                spacing: { after: 150 },
+                            }),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Cloud & DevOps: ",
+                                        bold: true,
+                                    }),
+                                    new TextRun({
+                                        text: "AWS (Lambda, EC2, S3, SES, Cognito, Transcribe, Polly, API Gateway), Serverless Architecture, Microservices",
+                                    }),
+                                ],
+                                spacing: { after: 150 },
+                            }),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "AI & ML: ",
+                                        bold: true,
+                                    }),
+                                    new TextRun({
+                                        text: "GPT-4o, DeepSeek, OpenAI Whisper, AWS Polly",
+                                    }),
+                                ],
+                                spacing: { after: 150 },
+                            }),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Payment Integration: ",
+                                        bold: true,
+                                    }),
+                                    new TextRun({
+                                        text: "Razorpay, Stripe",
+                                    }),
+                                ],
+                                spacing: { after: 150 },
+                            }),
+                            new Paragraph({
+                                children: [
+                                    new TextRun({
+                                        text: "Tools & Others: ",
+                                        bold: true,
+                                    }),
+                                    new TextRun({
+                                        text: "Git/GitHub, RESTful APIs, Agora SDK, Pandas, Azure AD",
+                                    }),
+                                ],
+                                spacing: { after: 150 },
+                            }),
+                        ],
+                    }],
+                });
+
+                // Generate and download the document
+                Packer.toBlob(doc).then(blob => {
+                    saveAs(blob, "Monishwaran_C_Resume.docx");
+                }).catch(err => {
+                    console.error("DOCX generation failed:", err);
+                    alert("Failed to generate DOCX file. Check console for details.");
+                });
+            }
+            
+            // NEW: PDF Generation Function
+            function generatePdf() {
+                const element = document.getElementById('resume-content');
+                const options = {
+                    margin: [10, 10, 10, 10], // Top, Left, Bottom, Right margin in mm
+                    filename: 'Monishwaran_C_Resume.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+                
+                // Get the 'container' element's content for PDF generation
+                html2pdf().from(element).set(options).save().catch(err => {
+                    console.error("PDF generation failed:", err);
+                    alert("Failed to generate PDF file. Check console for details.");
+                });
+            }
+
+            // Attach event listeners to buttons
+            document.getElementById('downloadDocxBtn').addEventListener('click', generateDocx);
+            document.getElementById('downloadPdfBtn').addEventListener('click', generatePdf);
+        };
+    </script>
+</body>
+</html>
