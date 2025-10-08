@@ -2,6 +2,8 @@ Name: Monishwaran.C
 email: monishwaran41046@gmail.com
 phone: +91 7868049170
 location: Chennai
+github: https://github.com/monishwaran57
+linkedin: https://linkedin.com/in/mongineer
 
 Bapon IT Services(9-Dec-2024 to 30-june-2025):-
     1. On 9th december 2024 i joined bapon IT services as a backend developer intern, It's a product based company, when i joined they have already launched a product named hyr-sense, Hyr-sense is a AI based interview conducting web application, which is capable of conducting a voice based interview for provided job description and finally assess the candidate's skill for the job, for this the tech stack include python fastapi for backend development,mongodb as database, react for frontend development, aws as hosting platform, agora for meeting channel provider, openai(gpt-40 + whisper) and aws polly for ai voice generation and some more aws services, and the first job assigned to me was record the interview of the candidates and store it in db, for that i gone through the agora docs, who was our meeting channel provider and also he offered cloud recording as a additional feature, with which one can record the meeting and store it in cloud storage, to achieve this, i have done the following:-
