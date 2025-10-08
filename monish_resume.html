@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monishwaran C - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2c5aa0;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .print-button:hover {
+            background: #1e4080;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+
+        .resume {
+            padding: 40px 50px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            color: #1a1a1a;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .contact-info {
+            font-size: 10px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .contact-info a {
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: white;
+            background: #2c5aa0;
+            padding: 5px 12px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Professional Summary */
+        .summary-text {
+            font-size: 10px;
+            color: #333;
+            text-align: justify;
+            line-height: 1.4;
+        }
+
+        /* Work Experience */
+        .job {
+            margin-bottom: 10px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .job-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .job-company {
+            font-size: 10px;
+            color: #2c5aa0;
+            font-weight: 600;
+        }
+
+        .job-date {
+            font-size: 9px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .job-bullets {
+            margin-left: 18px;
+            margin-top: 4px;
+        }
+
+        .job-bullets li {
+            font-size: 9px;
+            color: #333;
+            line-height: 1.4;
+            margin-bottom: 2px;
+        }
+
+        /* Key Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+
+        .project {
+            font-size: 9px;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .project strong {
+            color: #2c5aa0;
+            font-weight: 700;
+        }
+
+        /* Technical Skills - Two Column Layout */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 30px;
+        }
+
+        .skill-category {
+            margin-bottom: 4px;
+        }
+
+        .skill-label {
+            font-size: 9px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+
+        .skill-items {
+            font-size: 9px;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        /* Education */
+        .education-item {
+            font-size: 10px;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+
+        .edu-details {
+            color: #333;
+            font-size: 9px;
+        }
+
+        /* Certifications */
+        .cert-item {
+            font-size: 10px;
+            color: #333;
+        }
+
+        .cert-title {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            .resume {
+                padding: 20px 30px;
+            }
+
+            .header {
+                margin-bottom: 10px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+                margin-bottom: 4px;
+            }
+
+            .contact-info {
+                font-size: 9px;
+            }
+
+            .section {
+                margin-bottom: 10px;
+            }
+
+            .section-title {
+                font-size: 11px;
+                padding: 4px 10px;
+                margin-bottom: 6px;
+            }
+
+            .summary-text {
+                font-size: 9px;
+                line-height: 1.3;
+            }
+
+            .job {
+                margin-bottom: 8px;
+            }
+
+            .job-title {
+                font-size: 10px;
+            }
+
+            .job-company {
+                font-size: 9px;
+            }
+
+            .job-date {
+                font-size: 8px;
+            }
+
+            .job-bullets {
+                margin-top: 3px;
+            }
+
+            .job-bullets li {
+                font-size: 8.5px;
+                line-height: 1.3;
+                margin-bottom: 1px;
+            }
+
+            .projects-grid {
+                gap: 4px;
+            }
+
+            .project {
+                font-size: 8.5px;
+                line-height: 1.3;
+            }
+
+            .skills-container {
+                gap: 6px 25px;
+            }
+
+            .skill-category {
+                margin-bottom: 3px;
+            }
+
+            .skill-label {
+                font-size: 8.5px;
+                margin-bottom: 1px;
+            }
+
+            .skill-items {
+                font-size: 8.5px;
+                line-height: 1.2;
+            }
+
+            .education-item {
+                font-size: 9px;
+            }
+
+            .edu-details {
+                font-size: 8.5px;
+            }
+
+            .cert-item {
+                font-size: 9px;
+            }
+        }
+
+        @page {
+            margin: 0.4in 0.5in;
+            size: letter;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">📄 Print / Save as PDF</button>
+    
+    <div class="container">
+        <div class="resume">
+            <!-- Header -->
+            <div class="header">
+                <h1>MONISHWARAN C</h1>
+                <div class="contact-info">
+                    Email: <a href="mailto:monarch.aws@gmail.com">monarch.aws@gmail.com</a> | Phone: +91-7868049170<br>
+                    LinkedIn: <a href="https://linkedin.com/in/mongineer" target="_blank">linkedin.com/in/mongineer</a> | AWS Cloud Practitioner Certified
+                </div>
+            </div>
+
+            <!-- Professional Summary -->
+            <div class="section">
+                <div class="section-title">Professional Summary</div>
+                <div class="summary-text">
+                    Experienced Software Engineer with 2+ years in full-stack development, specializing in AI-powered applications, microservices architecture, and cloud solutions. Proven track record of leading teams, optimizing systems for 20% cost reduction, and delivering 130+ RESTful APIs. AWS Cloud Practitioner certified with expertise in Python, FastAPI, and enterprise ERP solutions.
+                </div>
+            </div>
+
+            <!-- Work Experience -->
+            <div class="section">
+                <div class="section-title">Work Experience</div>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Software Engineer</div>
+                            <div class="job-company">Bapon IT Services, Chennai</div>
+                        </div>
+                        <div class="job-date">Dec 2024 – Present</div>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Built and maintained AI-powered applications including AI interviews, transcription services, timesheets, and skill assessment platforms</li>
+                        <li>Developed and deployed 130+ RESTful APIs using Python and FastAPI framework</li>
+                        <li>Designed microservices architecture on AWS using Lambda, ECS, and API Gateway, improving system scalability</li>
+                        <li>Integrated Agora SDK for video functionality, payment gateways (Razorpay and Stripe), AWS Cognito, and Azure AD SSO</li>
+                        <li>Optimized cloud infrastructure resulting in 20% cost reduction</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Senior Odoo Developer / Backend Developer</div>
+                            <div class="job-company">Jetzerp Pvt Ltd, Karaikudi</div>
+                        </div>
+                        <div class="job-date">May 2023 – Dec 2024</div>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Led a 6-member development team delivering ERP solutions for manufacturing and automotive clients</li>
+                        <li>Successfully migrated systems from Odoo 14 to Odoo 17, implementing automated purchase imports with 80% performance improvement using Zoho Books API</li>
+                        <li>Built FastAPI services for real-time inventory tracking with mobile application integration</li>
+                        <li>Automated reporting and workflows using Python and PostgreSQL database optimization</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Flutter Developer</div>
+                            <div class="job-company">Jetzerp Pvt Ltd, Karaikudi</div>
+                        </div>
+                        <div class="job-date">Jan 2023 – May 2023</div>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Developed mobile applications including Inventory Checker and Appraiser for US auto trading market</li>
+                        <li>Integrated barcode scanning functionality, ERP system synchronization, and responsive user interfaces</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Key Projects -->
+            <div class="section">
+                <div class="section-title">Key Projects</div>
+                <div class="projects-grid">
+                    <div class="project">
+                        <strong>SkillfulSense:</strong> AI skill assessment platform utilizing GPT-4, AWS Lambda, and Agora SDK for comprehensive talent evaluation
+                    </div>
+                    <div class="project">
+                        <strong>HRSuite:</strong> Enterprise timesheet management system with 90+ APIs and Single Sign-On integration with Azure AD
+                    </div>
+                    <div class="project">
+                        <strong>Invoice Automation:</strong> OCR-powered solution using FastAPI and Oracle database, reducing manual data entry by 90%
+                    </div>
+                    <div class="project">
+                        <strong>Pipe Optimizer:</strong> Python and AWS-based automated pipeline design tool with live demo deployment
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Skills - Two Column Layout -->
+            <div class="section">
+                <div class="section-title">Technical Skills</div>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <div class="skill-label">Programming Languages</div>
+                        <div class="skill-items">Python, JavaScript, Dart, SQL</div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-label">Frameworks & Libraries</div>
+                        <div class="skill-items">FastAPI, Flutter, SQLAlchemy, Pandas</div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-label">Databases</div>
+                        <div class="skill-items">PostgreSQL, MongoDB, Oracle</div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-label">Cloud & DevOps</div>
+                        <div class="skill-items">AWS Lambda, ECS, API Gateway, S3, Nginx, Git</div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-label">Specializations</div>
+                        <div class="skill-items">REST APIs, Microservices, ERP Systems, Payment Integration</div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-label">AI & ML</div>
+                        <div class="skill-items">OpenAI APIs, AWS AI Services, GPT Integration</div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-label">Authentication</div>
+                        <div class="skill-items">AWS Cognito, Azure AD, SSO Implementation</div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-label">Tools & Platforms</div>
+                        <div class="skill-items">Odoo, Agora SDK, Razorpay, Stripe</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="section">
+                <div class="section-title">Education</div>
+                <div class="education-item">
+                    <div class="edu-degree">Bachelor of Engineering in Mechanical Engineering</div>
+                    <div class="edu-details">ACGCET, Karaikudi | 2019 – 2023 | CGPA: 8.1/10</div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="section">
+                <div class="section-title">Certifications</div>
+                <div class="cert-item">
+                    <span class="cert-title">AWS Certified Cloud Practitioner</span> | Score: 96.2%
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
