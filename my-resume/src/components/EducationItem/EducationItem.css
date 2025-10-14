@@ -1,0 +1,37 @@
+.education-item {
+  background: #f7fafc;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.education-item:hover {
+  background: #edf2f7;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.education-degree {
+  color: #2d3748;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.education-details {
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+@media print {
+  .education-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  .education-item:hover {
+    background: #f7fafc;
+    box-shadow: none;
+  }
+}

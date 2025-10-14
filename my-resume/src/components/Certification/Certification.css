@@ -1,0 +1,34 @@
+.certification {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 6px rgba(72, 187, 120, 0.3);
+  transition: all 0.3s ease;
+}
+
+.certification:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(72, 187, 120, 0.4);
+}
+
+.certification-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.certification-score {
+  font-size: 0.9rem;
+}
+
+@media print {
+  .certification {
+    box-shadow: none;
+  }
+  
+  .certification:hover {
+    transform: none;
+  }
+}

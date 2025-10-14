@@ -1,0 +1,36 @@
+.resume-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.resume-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.resume-content {
+  padding: 40px;
+}
+
+@media print {
+  .resume-wrapper {
+    max-width: 100%;
+  }
+  
+  .resume-container {
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  .resume-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-content {
+    padding: 25px;
+  }
+}

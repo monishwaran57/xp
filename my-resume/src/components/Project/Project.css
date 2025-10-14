@@ -1,0 +1,88 @@
+.project {
+  background: #f7fafc;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.project:hover {
+  background: #edf2f7;
+  border-left-width: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.project-title {
+  color: #2d3748;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.project-achievements {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 15px;
+}
+
+.achievement-item {
+  color: #4a5568;
+  line-height: 1.7;
+  margin-bottom: 8px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.achievement-item::before {
+  content: "▸";
+  color: #667eea;
+  font-weight: bold;
+  position: absolute;
+  left: 5px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tech-tag {
+  background: #667eea;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  background: #764ba2;
+  transform: scale(1.05);
+}
+
+@media print {
+  .project {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  .project:hover {
+    background: #f7fafc;
+    box-shadow: none;
+  }
+  
+  .tech-tag:hover {
+    background: #667eea;
+    transform: none;
+  }
+}
