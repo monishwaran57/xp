@@ -8,6 +8,7 @@ import Project from '../Project/Project';
 import EducationItem from '../EducationItem/EducationItem';
 import Certification from '../Certification/Certification';
 import TechSkills from '../TechSkills/TechSkills';
+import ResumePDFVersion from './ResumePDFVersion';
 import { 
   personalInfo, 
   experiences, 
@@ -16,7 +17,7 @@ import {
   certifications, 
   technicalSkills 
 } from '../../data/resumeData';
-import { generateResumeText, downloadAsText, printResume } from '../../utils/downloadUtils';
+import { generateResumeText, downloadAsText, generatePDF, generatePDFFromCleanVersion } from '../../utils/downloadUtils';
 
 const Resume = () => {
   const handleDownloadText = () => {
@@ -32,14 +33,36 @@ const Resume = () => {
     downloadAsText(textContent);
   };
 
+  const handleDownloadPDF = async () => {
+    await generatePDF('resume-content', 'Monishwaran_C_Resume_Styled.pdf');
+  };
+
+  const handleDownloadCleanPDF = async () => {
+    await generatePDFFromCleanVersion('pdf-resume-content', 'Monishwaran_C_Resume_ATS.pdf');
+  };
+
   return (
     <div className="resume-wrapper">
       <DownloadButtons 
         onDownloadText={handleDownloadText}
-        onPrint={printResume}
+        onDownloadPDF={handleDownloadPDF}
+        onDownloadCleanPDF={handleDownloadCleanPDF}
       />
       
-      <div className="resume-container">
+      {/* Hidden Clean PDF version */}
+      <div style={{ position: 'absolute', left: '-9999px', top: '0' }}>
+        <ResumePDFVersion
+          personalInfo={personalInfo}
+          experiences={experiences}
+          personalProjects={personalProjects}
+          education={education}
+          certifications={certifications}
+          technicalSkills={technicalSkills}
+        />
+      </div>
+      
+      {/* Main visible resume */}
+      <div className="resume-container" id="resume-content">
         <Header personalInfo={personalInfo} />
         
         <div className="resume-content">

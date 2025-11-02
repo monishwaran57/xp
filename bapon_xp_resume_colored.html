@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monishwaran C - Resume</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .wrapper {
+            width: 100%;
+        }
+
+        /* Download buttons at top */
+        .download-section-top {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            background: rgba(255, 255, 255, 0.95);
+            color: #2d3748;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 30px;
+            font-size: 0.95em;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: white;
+        }
+
+        .download-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .container {
+            background: white;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: transform 0.2s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            color: #2d3748;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #764ba2, #667eea);
+            transition: width 0.3s ease;
+        }
+
+        .section:hover .section-title::after {
+            width: 100%;
+        }
+
+        .experience-item {
+            margin-bottom: 25px;
+        }
+
+        .company-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .company-header:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .company-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .project {
+            margin-bottom: 20px;
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .project:hover {
+            background: #edf2f7;
+            border-left-width: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-title {
+            color: #2d3748;
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .achievements {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievements li {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .achievements li:before {
+            content: "▸";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 5px;
+        }
+
+        .certification {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(72, 187, 120, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .certification:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(72, 187, 120, 0.4);
+        }
+
+        .cert-title {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: default;
+        }
+
+        .tech-tag:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .download-section-top {
+                display: none;
+            }
+
+            .wrapper {
+                max-width: 100%;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+
+            .header::before {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .download-section-top {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .download-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container" id="resume-content">
+            <div class="header">
+                <h1>MONISHWARAN C</h1>
+                <div class="contact-info">
+                    <div class="contact-item">📧 monishwaran41046@gmail.com</div>
+                    <div class="contact-item">📱 +91 7868049170</div>
+                    <div class="contact-item">📍 Chennai, Tamil Nadu</div>
+                    <div class="contact-item">💼 <a href="https://linkedin.com/in/mongineer" style="color: white; text-decoration: none;">linkedin.com/in/mongineer</a></div>
+                    <div class="contact-item">🔗 <a href="https://github.com/monishwaran57" style="color: white; text-decoration: none;">github.com/monishwaran57</a></div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="section">
+                    <h2 class="section-title">Professional Experience</h2>
+
+                    <div class="experience-item">
+                        <div class="company-header">
+                            <div class="company-name">Bapon IT Services - Software Engineer</div>
+                            <div class="duration">July 2025 - Present</div>
+                        </div>
+
+                        <div class="project">
+                            <div class="project-title">SkillfulSense - Web Assessment Platform</div>
+                            <div class="project-description">
+                                Led the development of a comprehensive web assessment platform (live at skillfulsense.com) offering topic-based assessments, AI-powered interviews, and personalized learning pathways with integrated certification.
+                            </div>
+                            <ul class="achievements">
+                                <li>Architected and developed 40+ RESTful API endpoints using FastAPI with decoupled microservices architecture</li>
+                                <li>Integrated dual payment gateways (Razorpay for India, Stripe for global markets) for seamless transactions</li>
+                                <li>Implemented AI-powered assessment generation using DeepSeek-Chat for MCQ and coding challenges</li>
+                                <li>Built real-time AI interview system with Agora meeting channels, GPT-4o, and AWS Polly for voice synthesis</li>
+                                <li>Developed intelligent voice assistant using GPT-4o-mini-realtime-preview accepting audio tokens directly for faster responses</li>
+                                <li>Created post-session helpful links feature powered by GPT-4.1 with web search capabilities</li>
+                                <li>Deployed backend across 6 Lambda functions following decoupled architecture; voice agent on EC2 with auto-scaling</li>
+                                <li>Integrated Google Custom Search API and YouTube Data API for curated free course recommendations</li>
+                                <li>Calculated infrastructure costs and determined minimum user threshold for cost recovery</li>
+                                <li>Managed AWS Cognito for user authentication and SES for email notifications</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python FastAPI</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">AWS Lambda</span>
+                                <span class="tech-tag">EC2</span>
+                                <span class="tech-tag">GPT-4o</span>
+                                <span class="tech-tag">Agora</span>
+                                <span class="tech-tag">Razorpay</span>
+                                <span class="tech-tag">Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="company-header">
+                            <div class="company-name">Bapon IT Services - Backend Developer Intern</div>
+                            <div class="duration">December 2024 - June 2025</div>
+                        </div>
+
+                        <div class="project">
+                            <div class="project-title">Hyr-Sense - AI Interview Platform</div>
+                            <div class="project-description">
+                                Enhanced existing AI-powered interview platform with cloud recording capabilities and real-time processing features.
+                            </div>
+                            <ul class="achievements">
+                                <li>Implemented cloud recording functionality using Agora's API, storing interview sessions on AWS S3</li>
+                                <li>Developed automated recording triggers integrated with start/end interview endpoints</li>
+                                <li>Configured secure AWS credentials management for cloud storage operations</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python FastAPI</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Agora SDK</span>
+                                <span class="tech-tag">AWS S3</span>
+                                <span class="tech-tag">React</span>
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <div class="project-title">SenseScript - Meeting Transcription & Summarization</div>
+                            <div class="project-description">
+                                Built serverless backend for meeting audio processing application enabling transcription and intelligent summarization.
+                            </div>
+                            <ul class="achievements">
+                                <li>Designed complete RESTful API architecture using FastAPI</li>
+                                <li>Integrated AWS Transcribe for accurate audio-to-text conversion</li>
+                                <li>Implemented GPT-4o for generating concise meeting summaries</li>
+                                <li>Deployed serverless backend on AWS Lambda with API Gateway</li>
+                                <li>Configured AWS Cognito for secure user pool management</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">AWS Lambda</span>
+                                <span class="tech-tag">AWS Transcribe</span>
+                                <span class="tech-tag">GPT-4o</span>
+                                <span class="tech-tag">Cognito</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <div class="project-title">HRSuite - Timesheet Management Portal</div>
+                            <div class="project-description">
+                                Developed comprehensive HR management system replacing Zoho People with custom-built solution for organizational needs.
+                            </div>
+                            <ul class="achievements">
+                                <li>Engineered 90+ API endpoints handling timesheets, leave management, attendance, documents, projects, and jobs</li>
+                                <li>Implemented role-based access control (RBAC) for secure multi-level permissions</li>
+                                <li>Utilized PostgreSQL with SQLAlchemy ORM for optimized database operations</li>
+                                <li>Configured AWS Cognito SSO integration with Azure Directory for seamless authentication</li>
+                                <li>Set up AWS SES for automated email notifications and alerts</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">SQLAlchemy</span>
+                                <span class="tech-tag">AWS SES</span>
+                                <span class="tech-tag">Cognito</span>
+                                <span class="tech-tag">Azure AD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Personal Projects</h2>
+
+                    <div class="project">
+                        <div class="project-title">Pipe Diameter Optimizer (opti.mklabs.work)</div>
+                        <div class="project-description">
+                            Developed web application automating water distribution pipeline diameter optimization, reducing manual iteration time by 80%.
+                        </div>
+                        <ul class="achievements">
+                            <li>Built optimization algorithm considering velocity constraints, residual head requirements, and endpoint specifications</li>
+                            <li>Created FastAPI endpoints for sample template download and optimization processing</li>
+                            <li>Implemented Excel file manipulation using Pandas for input/output handling</li>
+                            <li>Deployed backend on AWS Lambda with S3-hosted frontend</li>
+                            <li>Configured Route 53 for custom domain DNS management</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">AWS Lambda</span>
+                            <span class="tech-tag">S3</span>
+                            <span class="tech-tag">Route 53</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+
+                    <div class="project">
+                        <div class="project-title">Bachelor of Engineering in Mechanical Engineering</div>
+                        <div class="project-description">
+                            <strong>A.C.G.C.E.T, Karaikudi</strong> | 2019 - 2023 | CGPA: 8.1/10
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">Higher Secondary Certificate (HSC)</div>
+                        <div class="project-description">
+                            <strong>SVS Matriculation Higher Secondary School, Muthupet</strong> | 2018 - 2019 | Percentage: 85%
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">Secondary School Leaving Certificate (SSLC)</div>
+                        <div class="project-description">
+                            <strong>SVS Matriculation Higher Secondary School, Muthupet</strong> | 2016 - 2017 | Percentage: 97%
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="certification">
+                        <div class="cert-title">AWS Certified Cloud Practitioner</div>
+                        <div>Score: 96.2%</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">SQLAlchemy</span>
+                        <span class="tech-tag">AWS (Lambda, EC2, S3, SES, Cognito, Transcribe, Polly)</span>
+                        <span class="tech-tag">GPT-4o</span>
+                        <span class="tech-tag">DeepSeek</span>
+                        <span class="tech-tag">OpenAI Whisper</span>
+                        <span class="tech-tag">Agora SDK</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Razorpay</span>
+                        <span class="tech-tag">Stripe</span>
+                        <span class="tech-tag">Git/GitHub</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">RESTful APIs</span>
+                        <span class="tech-tag">Microservices</span>
+                        <span class="tech-tag">Serverless Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

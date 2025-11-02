@@ -1,32 +1,82 @@
 import React, { useState } from 'react';
-import { Download, FileText } from 'lucide-react';
+import { Download, FileText, Loader, FileCheck } from 'lucide-react';
 import './DownloadButtons.css';
 
-const DownloadButtons = ({ onDownloadText, onPrint }) => {
-  const [isDownloading, setIsDownloading] = useState(false);
+const DownloadButtons = ({ onDownloadText, onDownloadPDF, onDownloadCleanPDF }) => {
+  const [isDownloadingText, setIsDownloadingText] = useState(false);
+  const [isDownloadingPDF, setIsDownloadingPDF] = useState(false);
+  const [isDownloadingCleanPDF, setIsDownloadingCleanPDF] = useState(false);
 
-  const handleDownload = async () => {
-    setIsDownloading(true);
-    await onDownloadText();
-    setTimeout(() => setIsDownloading(false), 1000);
+  const handleDownloadText = async () => {
+    setIsDownloadingText(true);
+    try {
+      await onDownloadText();
+    } catch (error) {
+      alert('Failed to download text file. Please try again.', error);
+    } finally {
+      setTimeout(() => setIsDownloadingText(false), 1000);
+    }
+  };
+
+  const handleDownloadPDF = async () => {
+    setIsDownloadingPDF(true);
+    try {
+      await onDownloadPDF();
+    } catch (error) {
+      alert('Failed to generate PDF. Please try again.', error);
+    } finally {
+      setTimeout(() => setIsDownloadingPDF(false), 2000);
+    }
+  };
+
+  const handleDownloadCleanPDF = async () => {
+    setIsDownloadingCleanPDF(true);
+    try {
+      await onDownloadCleanPDF();
+    } catch (error) {
+      alert('Failed to generate clean PDF. Please try again.', error);
+    } finally {
+      setTimeout(() => setIsDownloadingCleanPDF(false), 2000);
+    }
   };
 
   return (
     <div className="download-buttons no-print">
       <button
-        onClick={handleDownload}
-        disabled={isDownloading}
+        onClick={handleDownloadText}
+        disabled={isDownloadingText}
         className="download-btn"
       >
-        <FileText size={20} />
-        <span>{isDownloading ? 'Downloading...' : 'Download as TXT'}</span>
+        {isDownloadingText ? (
+          <Loader size={20} className="spin" />
+        ) : (
+          <FileText size={20} />
+        )}
+        <span>{isDownloadingText ? 'Downloading...' : 'Download as TXT'}</span>
       </button>
       <button
-        onClick={onPrint}
-        className="download-btn print-btn"
+        onClick={handleDownloadPDF}
+        disabled={isDownloadingPDF}
+        className="download-btn pdf-btn"
       >
-        <Download size={20} />
-        <span>Print / Save as PDF</span>
+        {isDownloadingPDF ? (
+          <Loader size={20} className="spin" />
+        ) : (
+          <Download size={20} />
+        )}
+        <span>{isDownloadingPDF ? 'Generating...' : 'Styled PDF'}</span>
+      </button>
+      <button
+        onClick={handleDownloadCleanPDF}
+        disabled={isDownloadingCleanPDF}
+        className="download-btn clean-pdf-btn"
+      >
+        {isDownloadingCleanPDF ? (
+          <Loader size={20} className="spin" />
+        ) : (
+          <FileCheck size={20} />
+        )}
+        <span>{isDownloadingCleanPDF ? 'Generating...' : 'Clean PDF (ATS)'}</span>
       </button>
     </div>
   );
