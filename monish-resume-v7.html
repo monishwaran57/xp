@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monishwaran C - Resume</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            background: white;
+            color: #000000;
+            line-height: 1.5;
+            font-size: 11pt;
+        }
+
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background: white;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 12px;
+            margin-bottom: 18px;
+        }
+
+        .header h1 {
+            font-size: 22pt;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #000000;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            font-size: 10pt;
+            color: #000000;
+            line-height: 1.3;
+        }
+
+        .contact-info a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 13pt;
+            font-weight: bold;
+            color: #000000;
+            text-transform: uppercase;
+            border-bottom: 1.5px solid #000000;
+            padding-bottom: 3px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .experience-item {
+            margin-bottom: 16px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .job-left {
+            flex: 1;
+        }
+
+        .job-right {
+            text-align: right;
+            font-size: 10pt;
+            color: #000000;
+        }
+
+        .company-name {
+            font-size: 11.5pt;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .job-title {
+            font-size: 10.5pt;
+            font-style: italic;
+            color: #000000;
+        }
+
+        .achievements {
+            list-style-position: outside;
+            margin-left: 18px;
+            padding-left: 0;
+        }
+
+        .achievements li {
+            font-size: 10pt;
+            color: #000000;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .tech-stack {
+            font-size: 9.5pt;
+            color: #000000;
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        .education-item {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .education-left {
+            flex: 1;
+        }
+
+        .education-right {
+            text-align: right;
+            font-size: 10pt;
+            color: #000000;
+        }
+
+        .degree {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .institution {
+            font-size: 10pt;
+            color: #000000;
+        }
+
+        .skills-section {
+            font-size: 10pt;
+            line-height: 1.6;
+        }
+
+        .skill-category {
+            margin-bottom: 6px;
+        }
+
+        .skill-category strong {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0.4in;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .experience-item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>MONISHWARAN C</h1>
+            <div class="contact-info">
+                Chennai, Tamil Nadu, India | +91 7868049170 | monishwaran41046@gmail.com<br>
+                LinkedIn: linkedin.com/in/mongineer | GitHub: github.com/monishwaran57
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p style="font-size: 10pt; line-height: 1.4;">
+                Software Engineer with 1+ years of experience in backend development, cloud architecture, and AI integration. Expert in building scalable microservices using Python FastAPI, AWS services, and modern AI technologies. Proven ability to architect and deploy production-ready solutions from concept to deployment. Strong track record in API development, serverless architecture, and integrating third-party services for comprehensive business solutions.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-section">
+                <div class="skill-category">
+                    <strong>Languages:</strong> Python, JavaScript, SQL
+                </div>
+                <div class="skill-category">
+                    <strong>Frameworks:</strong> FastAPI, React, SQLAlchemy, Pandas, NumPy
+                </div>
+                <div class="skill-category">
+                    <strong>Databases:</strong> MongoDB, PostgreSQL, SQL Server
+                </div>
+                <div class="skill-category">
+                    <strong>AWS Services:</strong> Lambda, EC2, S3, RDS, API Gateway, Cognito, SES, Transcribe, Polly, CloudWatch, Route 53
+                </div>
+                <div class="skill-category">
+                    <strong>AI/ML:</strong> OpenAI GPT-4o/4.1, DeepSeek-Chat, OpenAI Whisper, Natural Language Processing
+                </div>
+                <div class="skill-category">
+                    <strong>APIs & Integration:</strong> RESTful APIs, Agora SDK, Razorpay, Stripe, Google APIs, YouTube Data API
+                </div>
+                <div class="skill-category">
+                    <strong>Tools & Practices:</strong> Git, Docker, Postman, Microservices Architecture, Serverless Architecture, OAuth 2.0, JWT
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-left">
+                        <div class="company-name">Bapon IT Services, Chennai, India</div>
+                        <div class="job-title">Software Engineer</div>
+                    </div>
+                    <div class="job-right">July 2025 - Present</div>
+                </div>
+                <ul class="achievements">
+                    <li>Architected and developed <strong>SkillfulSense</strong>, a comprehensive web assessment platform with AI-powered interview simulations, serving multiple concurrent users with 99.9% uptime</li>
+                    <li>Designed 40+ RESTful API endpoints using FastAPI with decoupled microservices architecture, ensuring scalability and maintainability across 6 AWS Lambda functions</li>
+                    <li>Integrated dual payment gateways (Razorpay and Stripe) processing secure international transactions with PCI-compliant security standards</li>
+                    <li>Built real-time AI interview simulation system integrating Agora meeting channels, GPT-4o for NLP, and AWS Polly for text-to-speech synthesis, reducing interview scheduling costs by 70%</li>
+                    <li>Implemented AI-powered assessment generation using DeepSeek-Chat API for dynamic MCQs and coding challenges, generating 500+ unique questions per topic</li>
+                    <li>Developed intelligent voice assistant using GPT-4o-mini-realtime-preview with direct audio token processing, achieving 40% latency reduction</li>
+                    <li>Deployed voice agent on EC2 with auto-scaling configuration handling 100+ concurrent sessions; managed AWS Cognito for authentication and AWS SES for notifications</li>
+                    <li>Conducted infrastructure cost analysis and optimization, determining minimum viable user threshold for profitability with 25% cost reduction</li>
+                </ul>
+                <div class="tech-stack">
+                    <strong>Tech Stack:</strong> Python, FastAPI, MongoDB, AWS (Lambda, EC2, S3, Cognito, SES), GPT-4o, DeepSeek-Chat, Agora SDK, AWS Polly, Razorpay, Stripe
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-left">
+                        <div class="company-name">Bapon IT Services, Chennai, India</div>
+                        <div class="job-title">Backend Developer Intern</div>
+                    </div>
+                    <div class="job-right">December 2024 - June 2025</div>
+                </div>
+
+                <p style="font-size: 10pt; margin-bottom: 6px; font-weight: bold;">Hyr-Sense - AI-Powered Interview Platform</p>
+                <ul class="achievements">
+                    <li>Enhanced existing platform by implementing cloud recording functionality using Agora Cloud Recording API with AWS S3 persistent storage</li>
+                    <li>Developed automated recording triggers integrated with interview lifecycle API endpoints for seamless session capture</li>
+                </ul>
+                <div class="tech-stack">
+                    <strong>Tech Stack:</strong> Python, FastAPI, MongoDB, Agora SDK, AWS S3, React
+                </div>
+
+                <p style="font-size: 10pt; margin: 10px 0 6px 0; font-weight: bold;">SenseScript - Meeting Transcription Application</p>
+                <ul class="achievements">
+                    <li>Built serverless backend infrastructure for meeting audio processing with RESTful API architecture using FastAPI</li>
+                    <li>Integrated AWS Transcribe for multi-format audio-to-text conversion and GPT-4o for generating contextually relevant meeting summaries</li>
+                    <li>Deployed on AWS Lambda with API Gateway configuration; configured AWS Cognito for secure user authentication</li>
+                </ul>
+                <div class="tech-stack">
+                    <strong>Tech Stack:</strong> Python, FastAPI, AWS Lambda, AWS Transcribe, GPT-4o, AWS Cognito, MongoDB
+                </div>
+
+                <p style="font-size: 10pt; margin: 10px 0 6px 0; font-weight: bold;">HRSuite - Enterprise Timesheet Management Portal</p>
+                <ul class="achievements">
+                    <li>Developed comprehensive HR management system to replace Zoho People, engineering 90+ API endpoints for timesheets, leave management, attendance tracking, and project management</li>
+                    <li>Implemented role-based access control (RBAC) system for secure multi-level permissions management across organizational hierarchies</li>
+                    <li>Utilized PostgreSQL with SQLAlchemy ORM for optimized relational data operations; configured AWS Cognito SSO integration with Azure AD</li>
+                </ul>
+                <div class="tech-stack">
+                    <strong>Tech Stack:</strong> Python, FastAPI, PostgreSQL, SQLAlchemy, AWS SES, AWS Cognito, Azure AD, React
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-left">
+                        <div class="company-name">Pipe Diameter Optimizer</div>
+                        <div class="job-title">Personal Project (opti.mklabs.work)</div>
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Developed web application automating water distribution pipeline diameter optimization, reducing manual iteration time by 80%</li>
+                    <li>Built optimization algorithm considering velocity constraints, residual head requirements, and endpoint pressure specifications</li>
+                    <li>Created RESTful API using FastAPI for template downloads and optimization processing; implemented Excel manipulation with Pandas</li>
+                    <li>Deployed serverless backend on AWS Lambda with S3-hosted frontend; configured Route 53 for custom domain and SSL</li>
+                </ul>
+                <div class="tech-stack">
+                    <strong>Tech Stack:</strong> Python, Pandas, NumPy, FastAPI, AWS Lambda, AWS S3, AWS Route 53
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+
+            <div class="education-item">
+                <div class="education-left">
+                    <div class="degree">Bachelor of Engineering in Mechanical Engineering</div>
+                    <div class="institution">A.C.G.C.E.T, Karaikudi, Tamil Nadu, India</div>
+                </div>
+                <div class="education-right">2019 - 2023<br>CGPA: 8.1/10</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Certifications</h2>
+            <div style="font-size: 10pt;">
+                <strong>AWS Certified Cloud Practitioner</strong> - Amazon Web Services | Score: 96.2% | Valid
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
